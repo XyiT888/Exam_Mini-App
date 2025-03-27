@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+#start-screen{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}*/
+
+
+#start-btn {
+    /* display: none; */
+    background-color: #ffffff;
+    color: #7788f7;
+    border: none;
+    padding: 12px 25px;/*  设置按钮内边距，上、下各12像素，左右各25像素，使按钮内的文字与边框之间有足够的间距。 */
+    border-radius: none;/*  将按钮的边框圆角设置为0，使按钮的边框没有圆角。 */
+    cursor: pointer;/*将鼠标悬停在按钮上时，光标会变成手指形状，提示用户这个元素是可点击的。*/
+    font-size: 16px;
+    transition: all 0.3s;
+    margin: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;/*将元素内的子元素在交叉轴（水平方向）上居中对齐。*/
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.screen {
+    display: none;/*？？此属性将元素设置为不可见，即元素不会在页面上显示。*/
+    flex-direction: column;/*将元素的子元素按列方向排列，即垂直排列*/
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+/* 通过 JavaScript 动态添加/移除 .active 类，实现元素的显示或隐藏（类似弹窗、页面切换效果）。 */
+.screen.active {
+    display: flex;/*当元素具有.active类时，display属性被设置为flex，这意味着元素将变为可见，并且其子元素将按照flex布局规则进行排列。*/
+    
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background-color: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #e0e0e0;
+}
+
+.btn.primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #45a049;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.ksxz-button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.instructions {
+    text-align: left;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.instructions p {
+    margin-bottom: 10px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.progress {
+    font-size: 18px;
+    color: #666;
+}
+
+.timer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.time-bar {
+    width: 100px;
+    height: 8px;
+    background-color: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.time-progress {
+    height: 100%;
+    width: 100%;
+    background-color: #4CAF50;
+    transition: width 1s linear;
+}
+
+.question-container {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+#question-text {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    padding: 12px 15px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-align: left;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.option.correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+.option.incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+.option.disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+#next-btn {
+    margin-top: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-container {
+    margin: 30px 0;
+}
+
+.score {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.message {
+    font-size: 18px;
+    color: #666;
+}
