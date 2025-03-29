@@ -20,16 +20,16 @@
     color: #7788f7;
     border: none;
     padding: 12px 25px;/*  设置按钮内边距，上、下各12像素，左右各25像素，使按钮内的文字与边框之间有足够的间距。 */
-    border-radius: none;/*  将按钮的边框圆角设置为0，使按钮的边框没有圆角。 */
+    border-radius: 5px;/*  将按钮的边框圆角设置为5 */
     cursor: pointer;/*将鼠标悬停在按钮上时，光标会变成手指形状，提示用户这个元素是可点击的。*/
-    font-size: 16px;
+    font-size: 18px;
     transition: all 0.3s;
-    margin: 5px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
 }
 
 body {
-    background-color: #ffffff;
+    background-color: #7788f7;
     display: flex;
     justify-content: center;
     align-items: center;/*将元素内的子元素在交叉轴（水平方向）上居中对齐。*/
@@ -37,14 +37,18 @@ body {
     padding: 20px;
 }
 
+
+
 .screen {
+    position: relative; /* 设置为相对定位，为伪元素定位提供参考 */
+    overflow: hidden; /* 隐藏超出部分，确保晕影效果不会溢出 */
     display: none;/*？？此属性将元素设置为不可见，即元素不会在页面上显示。*/
     flex-direction: column;/*将元素的子元素按列方向排列，即垂直排列*/
     align-items: center;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    
     width: 100%;
     max-width: 600px;
     text-align: center;
@@ -58,93 +62,135 @@ body {
 
 h1 {
     color: #333;
-    margin-bottom: 30px;
+    text-align: left;
+    width: 100%;/*设置<h1>标签的宽度为父容器的100%，即占据父容器的全部宽度。*/
+    font-size: 22px;
+    margin-left: 65px;
+    padding: 18px
+}
+
+/* 分割线样式 */
+.divider {
+    width: 100%; /* 与容器同宽 */
+    height: 1px; /* 1像素高 */
+    background-color: #dcdcdc; /* 浅灰色 */
+    border: none; /* 移除默认边框 */
+}
+
+.time-emphasis {
+    color: #7788f7;
+    font-weight: bold;/*设置字体加粗*/
 }
 
 .btn {
-    background-color: #f0f0f0;
-    color: #333;
-    border: none;
+    background-color: #ffffff;
+    color: #7788f7;
+    border-color: #7788f7;
     padding: 12px 25px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
     transition: all 0.3s;
     margin: 5px;
+
 }
 
 .btn:hover {
-    background-color: #e0e0e0;
+    background-color: #7788f7;
+    color: white;
 }
 
 .btn.primary {
-    background-color: #4CAF50;
+    background-color: #7788f7;
     color: white;
 }
 
 .btn.primary:hover {
-    background-color: #45a049;
-}
-
-.button-group {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    background-color: #4164c2;
 }
 
 .ksxz-button-group {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    justify-content: flex-end;/* 改为左对齐 */
+  
+    padding: 0; /* 移除内边距 */
 }
 
 .instructions {
+    width: 100%;
     text-align: left;
-    margin-bottom: 20px;
-    line-height: 1.6;
+    margin-top: 15px;
+    margin-left: 65px;
 }
 
 .instructions p {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
 }
+
+
 
 .quiz-header {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-bottom: 20px;
 }
 
 .progress {
-    font-size: 18px;
-    color: #666;
+    color: #333;
+    text-align: left;
+    width: 100%;/*设置<h1>标签的宽度为父容器的100%，即占据父容器的全部宽度。*/
+    font-size: 22px;
+    padding: 22px;
+    font-weight: bold;
 }
 
 .timer {
     display: flex;
     align-items: center;
     gap: 10px;
+    color: #3f5083;
+    background-color: #d7e5fd;
+    border-radius: 5px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    margin-right: 30px;
+    padding-left: 10px;
+    white-space: nowrap; /* 防止文字换行 */
+}
+
+
+#time-change{
+    background-color: #353a3f;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#time-left{
+    color: #ffffff;
 }
 
 .time-bar {
-    width: 100px;
-    height: 8px;
-    background-color: #eee;
-    border-radius: 4px;
+    width: 100%; /* 与容器同宽 */
+    height: 3px;
+    background-color: #ffffff;
     overflow: hidden;
 }
 
 .time-progress {
     height: 100%;
     width: 100%;
-    background-color: #4CAF50;
-    transition: width 1s linear;
+    background-color: #7788f7;
+    transition: width 0.25s linear;
 }
 
 .question-container {
-    width: 100%;
+    width: 90%;
     text-align: left;
-    margin-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 #question-text {
@@ -160,8 +206,8 @@ h1 {
 
 .option {
     padding: 12px 15px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: #f3f7fd;
+    border: 1px solid #c1d0e6;
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s;
@@ -169,7 +215,18 @@ h1 {
 }
 
 .option:hover {
-    background-color: #f0f0f0;
+    background-color: #c1d0e6;
+}
+
+.option::after {
+    content: '';
+    display: inline-block;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
 }
 
 .option.correct {
@@ -178,10 +235,19 @@ h1 {
     color: #155724;
 }
 
+.option.correct::after {
+    background-color: #4CAF50; /* 绿色圆形背景 */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+}
+
 .option.incorrect {
     background-color: #f8d7da;
     border-color: #f5c6cb;
     color: #721c24;
+}
+
+.option.incorrect::after {
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23721c24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
 }
 
 .option.disabled {
@@ -189,8 +255,29 @@ h1 {
     opacity: 0.7;
 }
 
-#next-btn {
+/* 修改进度显示和下一题按钮的布局 */
+.schedule {
+    text-align: left;
+    margin-left: 30px;
     margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    position: relative; /* 添加相对定位 */
+}
+
+#next-btn {
+    background-color: #7788f7;
+    color: #fff;
+    margin-right: 30px;
 }
 
 .hidden {

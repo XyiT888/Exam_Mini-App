@@ -2,13 +2,13 @@
 const data = [
     {
         id: 1,
-        qs: 'HTML5 中 canvas 元素的用途是什么？',
+        qs: '1. HTML5 中 canvas 元素的用途是什么？',
         as: '绘制图形',
         opts: ['绘制图形', '播放音频', '用于存储数据', '显示视频']
     },
     {
         id: 2,
-        qs: 'CSS 中，box-sizing 属性的作用是什么？',
+        qs: '2. CSS 中，box-sizing 属性的作用是什么？',
         as: '设置盒模型的计算方式',
         opts: [
             '设置边框大小',
@@ -19,7 +19,7 @@ const data = [
     },
     {
         id: 3,
-        qs: '在 JavaScript 中，let 和 var 的主要区别是什么？',
+        qs: '3. 在 JavaScript 中，let 和 var 的主要区别是什么？',
         as: 'let 具有块级作用域，var 具有函数级作用域',
         opts: [
             'let 具有块级作用域，var 具有函数级作用域',
@@ -30,7 +30,7 @@ const data = [
     },
     {
         id: 4,
-        qs: '在 JavaScript 中，如何获取数组的长度？',
+        qs: '4. 在 JavaScript 中，如何获取数组的长度？',
         as: 'array.length',
         opts: [
             'array.getLength()',
@@ -41,7 +41,7 @@ const data = [
     },
     {
         id: 5,
-        qs: 'Vue.js 中，哪个生命周期钩子在组件创建后首次被调用？',
+        qs: '5. Vue.js 中，哪个生命周期钩子在组件创建后首次被调用？',
         as: 'created',
         opts: ['created', 'mounted', 'beforeCreate', 'updated']
     }
@@ -60,7 +60,7 @@ const nextBtn = document.getElementById('next-btn');
 const restartBtn = document.getElementById('restart-btn');
 const questionText = document.getElementById('question-text');
 const optionsContainer = document.getElementById('options-container');
-const currentQuestionEl = document.getElementById('current-question');
+const currentQuestionEl = document.getElementById('schedule-num');
 const totalQuestionsEl = document.getElementById('total-questions');
 const timeLeftEl = document.getElementById('time-left');
 const timeProgressEl = document.querySelector('.time-progress');
@@ -148,6 +148,7 @@ function loadQuestion() {
     
     // 重置计时器
     resetTimer();
+    timeProgressEl.style.width = '0%'; // 强制进度条归零（确保视觉同步）
     // 隐藏下一题按钮
     nextBtn.classList.add('hidden');
 }
@@ -167,7 +168,7 @@ function selectOption(optionEl, selectedOption) {
     });
     
     // 检查答案
-    if (selectedOption === question.as) {
+    if (selectedOption === question.as) {/**严格相等运算符，它不仅比较两个值的值是否相等，还比较它们的类型是否相同。 */
         // 如果答案正确，添加正确类
         optionEl.classList.add('correct');
         // 更新分数
@@ -216,9 +217,9 @@ function startTimer() {
         // 时间减一
         timeLeft--;
         // 更新时间显示
-        timeLeftEl.textContent = timeLeft;
+        timeLeftEl.textContent = timeLeft < 10 ? `0${timeLeft}` : timeLeft;
         // 更新时间进度条
-        timeProgressEl.style.width = `${(timeLeft / 15) * 100}%`;
+        timeProgressEl.style.width = `${((15-timeLeft) / 15) * 100}%`;
         
         // 如果时间小于等于0，清除定时器，调用时间到函数
         if (timeLeft <= 0) {
@@ -237,7 +238,7 @@ function resetTimer() {
     // 将剩余时间显示在页面上
     timeLeftEl.textContent = timeLeft;
     // 将进度条设置为100%
-    timeProgressEl.style.width = '100%';
+    timeProgressEl.style.width = '0%';
 }
 
 // 定义一个函数，当时间到时调用
@@ -270,7 +271,7 @@ function showResult() {
     
     // 定义一个变量，用于存储结果信息
     let message = '';
-    // 如果得分等于题目数量，则显示“太棒了！您答对了所有题目！”
+    // 如果得分等于题目数量，则显示“太棒了！🎉您答对了所有题目！”
     if (score === data.length) {
         message = '太棒了！您答对了所有题目！';
     // 如果得分大于等于题目数量的70%，则显示“做得不错！您的成绩良好。”
