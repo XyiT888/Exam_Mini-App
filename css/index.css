@@ -285,16 +285,28 @@ h1 {
 }
 
 .result-container {
-    margin: 30px 0;
+    margin-top: 30px;
 }
 
-.score {
-    font-size: 24px;
-    margin-bottom: 20px;
+.crown-icon {
+    max-width: 50%;  /* 图片最大宽度为容器宽度 */
+    height: auto;     /* 高度自动调整，保持比例 */
+    margin-bottom: 10px;
+    
+}
+
+.final{
+    font-size: 20px;
+    margin-bottom: 15px;
     color: #333;
 }
 
-.message {
-    font-size: 18px;
-    color: #666;
+.score {
+    font-size: 20px;
+    color: #333;
+}
+
+.btn-container {
+    margin-top: 20px;
+    margin-bottom: 30px;
 }
