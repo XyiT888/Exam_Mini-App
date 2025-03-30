@@ -42,7 +42,7 @@ body {
 .screen {
     position: relative; /* 设置为相对定位，为伪元素定位提供参考 */
     overflow: hidden; /* 隐藏超出部分，确保晕影效果不会溢出 */
-    display: none;/*？？此属性将元素设置为不可见，即元素不会在页面上显示。*/
+    display: none;/*此属性将元素设置为不可见，即元素不会在页面上显示。*/
     flex-direction: column;/*将元素的子元素按列方向排列，即垂直排列*/
     align-items: center;
     background-color: white;
@@ -59,6 +59,7 @@ body {
     display: flex;/*当元素具有.active类时，display属性被设置为flex，这意味着元素将变为可见，并且其子元素将按照flex布局规则进行排列。*/
     
 }
+
 
 h1 {
     color: #333;
@@ -212,12 +213,16 @@ h1 {
     cursor: pointer;
     transition: all 0.3s;
     text-align: left;
+    /* 新增 */
+    display:flex;
+    justify-content: space-between;
 }
 
 .option:hover {
     background-color: #c1d0e6;
 }
 
+/* 这个干啥用？？ */
 .option::after {
     content: '';
     display: inline-block;
@@ -235,9 +240,17 @@ h1 {
     color: #155724;
 }
 
+.option.incorrect::after,
 .option.correct::after {
-    background-color: #4CAF50; /* 绿色圆形背景 */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ffffff"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>');
+    content: '';
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.option.correct::after {
+    background-image: url('../img/right.png');
 }
 
 .option.incorrect {
@@ -247,7 +260,7 @@ h1 {
 }
 
 .option.incorrect::after {
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23721c24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>');
+    background-image: url('../img/error.png');
 }
 
 .option.disabled {
@@ -262,7 +275,6 @@ h1 {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
 
 .button-group {
     display: flex;
@@ -282,6 +294,10 @@ h1 {
 
 .hidden {
     display: none;
+}
+
+#result-screen{
+    max-width: 400px;
 }
 
 .result-container {

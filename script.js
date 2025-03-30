@@ -91,6 +91,7 @@ function showScreen(screenName) {
     } else {
         startScreen.style.display = 'none'; // 隐藏开始界面
     }
+
     // 2. 其他界面用active控制。遍历所有屏幕，移除active类
     document.querySelectorAll('.screen').forEach(screen => {
         screen.classList.remove('active');
@@ -163,11 +164,10 @@ function selectOption(optionEl, selectedOption) {
     
     // 禁用所有选项
     options.forEach(opt => {
-        opt.classList.add('disabled');
-        opt.style.cursor = 'not-allowed';
+        opt.style.pointerEvents = 'none'; // 禁用点击事件
     });
     
-    // 检查答案
+    // 检查答案并添加样式
     if (selectedOption === question.as) {/**严格相等运算符，它不仅比较两个值的值是否相等，还比较它们的类型是否相同。 */
         // 如果答案正确，添加正确类
         optionEl.classList.add('correct');
