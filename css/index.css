@@ -25,7 +25,7 @@
     font-size: 18px;
     transition: all 0.3s;
     margin-top: 20px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
 body {
@@ -47,10 +47,10 @@ body {
     align-items: center;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
     
     width: 100%;
-    max-width: 600px;
+    max-width: 520px;
     text-align: center;
 }
 
@@ -67,7 +67,7 @@ h1 {
     width: 100%;/*设置<h1>标签的宽度为父容器的100%，即占据父容器的全部宽度。*/
     font-size: 22px;
     margin-left: 65px;
-    padding: 18px
+    padding: 15px
 }
 
 /* 分割线样式 */
@@ -87,7 +87,7 @@ h1 {
     background-color: #ffffff;
     color: #7788f7;
     border-color: #7788f7;
-    padding: 12px 25px;
+    padding: 8px 18px;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
@@ -114,7 +114,9 @@ h1 {
     width: 100%;
     display: flex;
     justify-content: flex-end;/* 改为左对齐 */
-  
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-right: 60px;
     padding: 0; /* 移除内边距 */
 }
 
@@ -122,11 +124,12 @@ h1 {
     width: 100%;
     text-align: left;
     margin-top: 15px;
+    margin-bottom: 7px;
     margin-left: 65px;
 }
 
 .instructions p {
-    margin-bottom: 15px;
+    margin-bottom: 8px;
     font-size: 16px;
 }
 
@@ -216,6 +219,8 @@ h1 {
     /* 新增 */
     display:flex;
     justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .option:hover {
@@ -238,6 +243,8 @@ h1 {
     background-color: #d4edda;
     border-color: #c3e6cb;
     color: #155724;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .option.incorrect::after,
@@ -257,6 +264,8 @@ h1 {
     background-color: #f8d7da;
     border-color: #f5c6cb;
     color: #721c24;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .option.incorrect::after {
@@ -281,8 +290,6 @@ h1 {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-top: 8px;
-    margin-bottom: 8px;
     position: relative; /* 添加相对定位 */
 }
 
@@ -318,7 +325,7 @@ h1 {
 }
 
 .score {
-    font-size: 20px;
+    font-size: 18px;
     color: #333;
 }
 
