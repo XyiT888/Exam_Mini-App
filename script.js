@@ -244,6 +244,11 @@ function timeUp() {
     // 获取所有的选项
     const options = document.querySelectorAll('.option');
     
+    // 禁用所有选项
+    options.forEach(opt => {
+        opt.style.pointerEvents = 'none'; // 禁用点击事件
+    });
+
     // 遍历所有的选项
     options.forEach(opt => {
         // 给选项添加一个禁用样式
