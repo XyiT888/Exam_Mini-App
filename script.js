@@ -65,7 +65,6 @@ const totalQuestionsEl = document.getElementById('total-questions');
 const timeLeftEl = document.getElementById('time-left');
 const timeProgressEl = document.querySelector('.time-progress');
 const finalScoreEl = document.getElementById('final-score');
-const resultMessageEl = document.getElementById('result-message');
 
 // 考试状态
 let currentQuestionIndex = 0;
@@ -73,11 +72,8 @@ let score = 0;
 let timer;
 let timeLeft = 15;
 
-// 初始化
 // 初始化函数
 function init() {
-    // 将data数组的长度赋值给totalQuestionsEl的textContent属性
-    totalQuestionsEl.textContent = data.length;
     // 显示start屏幕
     showScreen('start');
 }
@@ -237,7 +233,7 @@ function resetTimer() {
     timeLeft = 15;
     // 将剩余时间显示在页面上
     timeLeftEl.textContent = timeLeft;
-    // 将进度条设置为100%
+    // 将进度条设置为0%
     timeProgressEl.style.width = '0%';
 }
 
@@ -293,12 +289,17 @@ function resetQuiz() {
     timeLeft = 15;
     // 清除计时器
     clearInterval(timer);
+    // 重置进度显示
+    currentQuestionEl.textContent = '1';
 }
 
 // 事件监听
 startBtn.addEventListener('click', () => showScreen('instructions'));
 exitBtn.addEventListener('click', () => showScreen('start'));
-jgexitBtn.addEventListener('click', () => showScreen('start'));
+jgexitBtn.addEventListener('click', () => {
+    resetQuiz();
+    showScreen('start');
+});
 continueBtn.addEventListener('click', () => showScreen('quiz'));
 nextBtn.addEventListener('click', nextQuestion);
 restartBtn.addEventListener('click', () => {
